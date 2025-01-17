@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Cultural - Espacio de Arte y Comunidad</title>
+    <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Secciones principales */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Grid de exhibiciones */
+        .exhibitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .exhibition-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .exhibition-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .exhibition-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .exhibition-content {
+            padding: 1.5rem;
+        }
+
+        /* Eventos */
+        .events-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        /* Blog */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Centro Cultural</a>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#exhibiciones">Exhibiciones</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenidos al Centro Cultural</h1>
+            <p>Un espacio dedicado al arte, la cultura y la comunidad</p>
+            <a href="#exhibiciones" class="cta-button">Explorar Exhibiciones</a>
+        </div>
+    </section>
+
+    <section id="exhibiciones" class="section">
+        <h2 class="section-title">Exhibiciones Actuales</h2>
+        <div class="exhibitions-grid">
+            <article class="exhibition-card">
+                <img src="/api/placeholder/400/300" alt="Exhibición 1" class="exhibition-image">
+                <div class="exhibition-content">
+                    <h3>Arte Contemporáneo</h3>
+                    <p>Una exploración de las tendencias artísticas actuales</p>
+                </div>
+            </article>
+            <article class="exhibition-card">
+                <img src="/api/placeholder/400/300" alt="Exhibición 2" class="exhibition-image">
+                <div class="exhibition-content">
+                    <h3>Fotografía Urbana</h3>
+                    <p>Perspectivas únicas de la vida en la ciudad</p>
+                </div>
+            </article>
+            <article class="exhibition-card">
+                <img src="/api/placeholder/400/300" alt="Exhibición 3" class="exhibition-image">
+                <div class="exhibition-content">
+                    <h3>Esculturas Modernas</h3>
+                    <p>Expresiones tridimensionales del arte contemporáneo</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="eventos" class="section">
+        <h2 class="section-title">Próximos Eventos</h2>
+        <div class="events-list">
+            <div class="event-card">
+                <h3>Taller de Pintura</h3>
+                <p>Fecha: 20 de Enero, 2025</p>
+                <p>Horario: 15:00 - 18:00</p>
+                <a href="#" class="cta-button">Registrarse</a>
+            </div>
+            <div class="event-card">
+                <h3>Concierto de Jazz</h3>
+                <p>Fecha: 25 de Enero, 2025</p>
+                <p>Horario: 20:00 - 22:00</p>
+                <a href="#" class="cta-button">Reservar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section">
+        <h2 class="section-title">Blog Cultural</h2>
+        <div class="blog-posts">
+            <article class="blog-card">
+                <img src="/api/placeholder/400/300" alt="Blog 1" class="blog-image">
+                <div class="blog-content">
+                    <h3>El Arte en la Era Digital</h3>
+                    <p>Explorando la intersección entre tecnología y creatividad</p>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="/api/placeholder/400/300" alt="Blog 2" class="blog-image">
+                <div class="blog-content">
+                    <h3>Entrevista con Artistas Locales</h3>
+                    <p>Conoce a los creadores que dan vida a nuestra comunidad</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Contacto</h3>
+                <p>Email: info@centrocultural.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Dirección: Calle Cultural 123</p>
+            </div>
+            <div>
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 9:00 - 20:00</p>
+                <p>Sábados y Domingos: 10:00 - 18:00</p>
+            </div>
+            <div>
+                <h3>Redes Sociales</h3>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
